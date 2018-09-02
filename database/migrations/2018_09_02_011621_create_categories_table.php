@@ -20,7 +20,7 @@ class CreateCategoriesTable extends Migration
             $table->timestamps();
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-            $table->index(['name', 'user_id']);
+            $table->unique(['name', 'user_id'], 'categorie_index');
         });
     }
 
