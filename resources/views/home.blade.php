@@ -42,11 +42,11 @@
 					</li>
 					<li class="list-group-item">
 						<div class="row">
-							<div class="col-7 col-sm-8 border-right">
+							<div class="col-8 border-right">
 								Almuerzo
 								<small class="text-muted">Alimentación</small>
 							</div>
-							<div class="col-5 col-sm-4 text-right">
+							<div class="col-4 text-right">
 								<small class="text-primary">$15.000</small>
 								<a href=""><i class="far fa-times-circle text-danger"></i></a>
 								<a href=""><i class="far fa-check-circle text-primary"></i></a>
