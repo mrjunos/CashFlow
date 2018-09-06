@@ -17,14 +17,13 @@ class CreateActivitiesTable extends Migration
             $table->increments('id');
             $table->integer('state');
             $table->decimal('value', 10, 2);
-            $table->string('name');
-            $table->string('desctiption');
+            $table->string('description');
             $table->timestamps();
             $table->unsignedInteger('sub_categorie_id');
             $table->unsignedInteger('user_id');
             $table->foreign('sub_categorie_id')->references('id')->on('sub_categories')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-            $table->index(['name', 'sub_categorie_id', 'user_id'], 'activitie_index');
+            $table->index(['sub_categorie_id', 'user_id'], 'activitie_index');
         });
     }
 

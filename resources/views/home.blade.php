@@ -71,7 +71,7 @@
 							</div>
 						</div>
 					</li>
-					<li class="list-group-item list-group-item-primary">
+					<li class="list-group-item list-group-item-success">
 						Saldo al terminar el día
 						<span class="float-right">$33.000</span>
 					</li>
