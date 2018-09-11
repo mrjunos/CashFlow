@@ -41,11 +41,11 @@
 					<li class="list-group-item">
 						<div class="row">
 							<div class="col-8 border-right">
-								{{$activity->subCategory->id}}
+								{{$activity->subCategory->name}}
 								<small class="text-muted">{{$activity->subCategory->category->name}}</small>
 								</div>
 								<div class="col-4 text-right">
-									<small class="text-success">{{$activity->subCategory->category->name}}</small>
+									<small class="text-success">{{$activity->value}}</small>
 								</div>
 							</div>
 						</li>

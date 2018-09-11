@@ -11,6 +11,6 @@ class Activity extends Model
     }
 
     public function subCategory() {
-    	return $this->belongsTo(SubCategory::class);
+    	return $this->belongsTo(SubCategory::class, 'sub_categorie_id');
     }
 }
