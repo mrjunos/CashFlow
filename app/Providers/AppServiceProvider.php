@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use Blade;
+
+use Carbon\Carbon;
+
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -11,9 +15,21 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
-    {
-        //
+    public function boot() {
+
+        Carbon::setLocale(config('app.locale'));
+
+        Blade::directive('currency', function ($money) {
+            return "<?php echo '$' . number_format($money, 2); ?>";
+        });
+
+        Blade::directive('descriptiveDate', function ($date) {
+            return "<?php echo date_format($date, 'l d \\- F'); ?>";
+        });
+
+        Blade::directive('dayDate', function ($date) {
+            return "<?php echo date_format($date, 'l'); ?>";
+        });
     }
 
     /**
