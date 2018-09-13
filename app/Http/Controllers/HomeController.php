@@ -6,6 +6,8 @@ use App\Activity;
 
 use Carbon\Carbon;
 
+use Jenssegers\Date\Date;
+
 use Illuminate\Http\Request;
 
 class HomeController extends Controller {
@@ -14,16 +16,9 @@ class HomeController extends Controller {
         $this->middleware('auth');
     }
 
-    public function index() {
-        $activities = Activity::all();
-        $date = Carbon::now();
-        $dateNext = Carbon::now()->addDay(1);
-        $dateLast = Carbon::now()->addDay(-1);
-        return view('home', [
-            'activities' => $activities,
-            'date' => $date,
-            'dateNext' => $dateNext,
-            'dateLast' => $dateLast,
-        ]);
+    public function index($date) {
+    	$date = new Date(Carbon::parse($date));
+        $activities = Activity::whereDate('created_at', $date)->get();
+        return view('home', compact('activities'), compact('date'));
     }
 }

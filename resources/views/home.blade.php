@@ -8,12 +8,12 @@
 				<div class="col">
 					<button type="button" class="btn btn-info text-white">
 						<i class="fas fa-angle-left text-white"></i>
-						@dayDate($dateLast)
+						{{$date->subDays(1)->format('l')}}
 					</button>
 				</div>
 				<div class="col text-right">
 					<button type="button" class="btn btn-info text-white">
-						@dayDate($dateNext)
+						{{$date->addDays(2)->format('l')}}
 						<i class="fas fa-angle-right text-white"></i>
 					</button>
 				</div>
@@ -22,7 +22,7 @@
 				<div class="card-header text-white bg-primary">
 					<div class="row">
 						<div class="col-8 text-gray">
-							@descriptiveDate($date)
+							{{$date->subDays(1)->format('l d \\d\\e F')}}
 						</div>
 						<div class="col-4 text-right">
 							<button type="button" class="btn btn-sm btn-light" data-toggle="modal" data-target="#exampleModal">

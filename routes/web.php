@@ -4,4 +4,4 @@ Route::view('/', 'welcome');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home/{date}', 'HomeController@index')->name('home');
