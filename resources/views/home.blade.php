@@ -6,16 +6,16 @@
 		<div class="col-md-8">
 			<div class="row mb-3">
 				<div class="col">
-					<button type="button" class="btn btn-info text-white">
+					<a href="{{url('/home/'.$date->subDays(1)->format('Y-m-d'))}}" class="btn btn-info text-white">
 						<i class="fas fa-angle-left text-white"></i>
-						{{$date->subDays(1)->format('l')}}
-					</button>
+						{{$date->format('l')}}
+					</a>
 				</div>
 				<div class="col text-right">
-					<button type="button" class="btn btn-info text-white">
-						{{$date->addDays(2)->format('l')}}
+					<a href="{{url('/home/'.$date->addDays(2)->format('Y-m-d'))}}" class="btn btn-info text-white">
+						{{$date->format('l')}}
 						<i class="fas fa-angle-right text-white"></i>
-					</button>
+					</a>
 				</div>
 			</div>
 			<div class="card">

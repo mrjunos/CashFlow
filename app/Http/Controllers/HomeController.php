@@ -16,8 +16,13 @@ class HomeController extends Controller {
         $this->middleware('auth');
     }
 
+    public function home() {
+        $date = Carbon::today()->format('Y-m-d');
+        return redirect()->action('HomeController@index', compact('date'));
+    }
+
     public function index($date) {
-    	$date = new Date(Carbon::parse($date));
+        $date = new Date(Carbon::parse($date));
         $activities = Activity::whereDate('created_at', $date)->get();
         return view('home', compact('activities'), compact('date'));
     }
