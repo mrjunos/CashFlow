@@ -32,9 +32,9 @@
 					</div>
 				</div>
 				<ul class="list-group list-group-flush">
-					<li class="list-group-item list-group-item-primary">
+					<li class="list-group-item list-group-item-{{$saldoIni<0?'danger':'primary'}}">
 						Saldo al empezar el día
-						<span class="float-right">$15.000</span>
+						<span class="float-right">@currency($saldoIni)</span>
 					</li>
 
 					@foreach($activities as $activity)
@@ -45,8 +45,8 @@
 								<small class="text-muted">{{$activity->subCategory->category->name}}</small>
 							</div>
 							<div class="col-4 text-right">
-								<small class="text-{{$activity->subCategory->category->type == 1 ? 'primary' : 'success'}}">@currency($activity->value)</small>
-								@if($activity->state == 'P')
+								<small class="text-{{$activity->type == 1 ? 'primary' : 'success'}}">@currency($activity->value)</small>
+								@if($activity->state == 'X')
 								<a href=""><i class="far fa-times-circle text-danger"></i></a>
 								<a href=""><i class="far fa-check-circle text-primary"></i></a>
 								@endif
@@ -54,16 +54,16 @@
 						</div>
 					</li>
 					@endforeach
-					<li class="list-group-item list-group-item-success">
+					
+					<li class="list-group-item list-group-item-{{$saldoFin<0?'danger':'success'}}">
 						Saldo al terminar el día
-						<span class="float-right">$33.000</span>
+						<span class="float-right">@currency($saldoFin)</span>
 					</li>
 				</ul>
 			</div>
 		</div>
 	</div>
 </div>
-
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -119,6 +119,4 @@
 		</div>
 	</div>
 </div>
-
-
 @endsection

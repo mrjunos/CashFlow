@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace CashFlow\Providers;
 
 use Blade;
 

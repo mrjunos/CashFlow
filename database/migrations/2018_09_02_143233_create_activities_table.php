@@ -16,6 +16,7 @@ class CreateActivitiesTable extends Migration
         Schema::create('activities', function (Blueprint $table) {
             $table->increments('id');
             $table->char('state', 1);
+            $table->integer('type');
             $table->decimal('value', 10, 2);
             $table->string('description');
             $table->timestamps();

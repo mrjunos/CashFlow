@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace CashFlow;
 
 use Illuminate\Database\Eloquent\Model;
 

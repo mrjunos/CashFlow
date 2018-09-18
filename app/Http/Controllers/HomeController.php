@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace CashFlow\Http\Controllers;
 
-use App\Activity;
+use CashFlow\Activity;
 
 use Carbon\Carbon;
 
@@ -18,12 +18,28 @@ class HomeController extends Controller {
 
     public function home() {
         $date = Carbon::today()->format('Y-m-d');
-        return redirect()->action('HomeController@index', compact('date'));
+        return redirect()->action('HomeController@day', compact('date'));
     }
 
-    public function index($date) {
+    public function day($date) {
+
         $date = new Date(Carbon::parse($date));
+
         $activities = Activity::whereDate('created_at', $date)->get();
-        return view('home', compact('activities'), compact('date'));
+
+        $ingresosIni = Activity::whereDate('created_at', '<', $date)->where('type', 2)->sum('value');
+        $ingresosFin = Activity::whereDate('created_at', '<=', $date)->where('type', 2)->sum('value');
+        $egresosIni = Activity::whereDate('created_at', '<', $date)->where('type', 1)->sum('value');
+        $egresosFin = Activity::whereDate('created_at', '<=', $date)->where('type', 1)->sum('value');
+
+        $saldoIni = $ingresosIni-$egresosIni;
+        $saldoFin = $ingresosFin-$egresosFin;
+
+        return view('home', [
+            'date' => $date,
+            'activities' => $activities,
+            'saldoIni' => $saldoIni,
+            'saldoFin' => $saldoFin,
+        ]);
     }
 }
