@@ -25,9 +25,9 @@
 							{{$date->subDays(1)->format('l d \\d\\e F')}}
 						</div>
 						<div class="col-4 text-right">
-							<button type="button" class="btn btn-sm btn-light" data-toggle="modal" data-target="#exampleModal">
+							<a href="{{ route('activities.create') }}" class="btn btn-sm btn-light">
 								<i class="fas fa-plus text-primary"></i>
-							</button>
+							</a>
 						</div>
 					</div>
 				</div>
@@ -65,58 +65,4 @@
 	</div>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-body">
-				<form>
-					<div class="form-row">
-						<div class="form-group col-6">
-							<small class="form-text text-muted">Tipo</small>
-							<select class="form-control form-control-sm" id="exampleFormControlSelect1">
-								<option>Egreso</option>
-								<option>Ingreso</option>
-							</select>
-						</div>
-						<div class="form-group col-6">
-							<small id="emailHelp" class="form-text text-muted">Categoría</small>
-							<select class="form-control form-control-sm" id="exampleFormControlSelect1">
-								<option>Transporte</option>
-								<option>Alimentación</option>
-								<option>Salud</option>
-								<option>Diversión</option>
-							</select>
-						</div>
-					</div>
-					<div class="form-group">
-						<small id="emailHelp" class="form-text text-muted">Subcategoría</small>
-						<select class="form-control form-control-sm" id="exampleFormControlSelect1">
-							<option>Bus</option>
-							<option>Metro / Cívica</option>
-							<option>Taxi / Uber</option>
-							<option>Otros transportes</option>
-						</select>
-					</div>
-					<div class="form-row">
-						<div class="form-group col-6">
-							<small id="emailHelp" class="form-text text-muted">Fecha</small>
-							<input type="date" class="form-control form-control-sm" id="exampleInputPassword1" placeholder="Fecha">
-						</div>
-						<div class="form-group col-6">
-							<small id="emailHelp" class="form-text text-muted">Valor</small>
-							<input type="number" class="form-control form-control-sm" id="exampleInputPassword1" placeholder="Valor">
-						</div>
-					</div>
-					<div class="form-group">
-						<small id="emailHelp" class="form-text text-muted">Comentario</small>
-						<textarea class="form-control form-control-sm" id="exampleFormControlTextarea1" rows="2" placeholder="Comentario"></textarea>
-					</div>
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-					<button type="submit" class="btn btn-primary float-right">Crear</button>
-				</div>
-			</form>
-		</div>
-	</div>
-</div>
 @endsection
