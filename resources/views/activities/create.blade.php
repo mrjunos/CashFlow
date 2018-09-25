@@ -23,10 +23,9 @@
 							<div class="form-group col-6">
 								<small id="emailHelp" class="form-text text-muted">Categoría</small>
 								<select class="form-control form-control-sm" id="exampleFormControlSelect1">
-									<option>Transporte</option>
-									<option>Alimentación</option>
-									<option>Salud</option>
-									<option>Diversión</option>
+									@foreach($categories as $category)
+										<option value="{{$category->id}}">{{$category->name}}</option>
+									@endforeach
 								</select>
 							</div>
 						</div>
