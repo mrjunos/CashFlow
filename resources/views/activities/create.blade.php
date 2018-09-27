@@ -13,30 +13,32 @@
 					</div>
 					<div class="card-body">
 						<div class="form-row">
-							<div class="form-group col-6">
+							<div class="form-group col">
 								<small class="form-text text-muted">Tipo</small>
 								<select class="form-control form-control-sm" id="exampleFormControlSelect1">
 									<option>Egreso</option>
 									<option>Ingreso</option>
 								</select>
 							</div>
+						</div>
+						<div class="form-row">
 							<div class="form-group col-6">
 								<small id="emailHelp" class="form-text text-muted">Categoría</small>
 								<select class="form-control form-control-sm" id="exampleFormControlSelect1">
 									@foreach($categories as $category)
-										<option value="{{$category->id}}">{{$category->name}}</option>
+									<option value="{{$category->id}}">{{$category->name}}</option>
 									@endforeach
 								</select>
 							</div>
-						</div>
-						<div class="form-group">
-							<small id="emailHelp" class="form-text text-muted">Subcategoría</small>
-							<select class="form-control form-control-sm" id="exampleFormControlSelect1">
-								<option>Bus</option>
-								<option>Metro / Cívica</option>
-								<option>Taxi / Uber</option>
-								<option>Otros transportes</option>
-							</select>
+							<div class="form-group col-6">
+								<small id="emailHelp" class="form-text text-muted">Subcategoría</small>
+								<select class="form-control form-control-sm" id="exampleFormControlSelect1">
+									<option>Bus</option>
+									<option>Metro / Cívica</option>
+									<option>Taxi / Uber</option>
+									<option>Otros transportes</option>
+								</select>
+							</div>
 						</div>
 						<div class="form-row">
 							<div class="form-group col-6">

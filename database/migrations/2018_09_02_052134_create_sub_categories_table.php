@@ -17,11 +17,11 @@ class CreateSubCategoriesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->timestamps();
-            $table->unsignedInteger('categorie_id');
+            $table->unsignedInteger('category_id');
             $table->unsignedInteger('user_id');
-            $table->foreign('categorie_id')->references('id')->on('categories')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-            $table->unique(['name', 'categorie_id', 'user_id'], 'sub_categorie_index');
+            $table->unique(['name', 'category_id', 'user_id'], 'sub_category_index');
         });
     }
 
