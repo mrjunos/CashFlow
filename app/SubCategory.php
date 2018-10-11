@@ -6,7 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class SubCategory extends Model {
 
-    public function category() {
-    	return $this->belongsTo(Category::class, 'categorie_id');
-    }
+	protected $fillable = [
+		'name',
+		'category_id',
+		'user_id',
+	];
+
+	public function category() {
+		return $this->belongsTo(Category::class, 'categorie_id');
+	}
 }

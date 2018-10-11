@@ -19,9 +19,7 @@
     Vue.use(VueAxios, axios);
     export default {
         mounted() {
-
-            Vue.axios.get('getCategories')
-            .then((response)=>{
+            Vue.axios.get('getCategories').then((response)=>{
                 this.categories = response.data;    
             })
         },
@@ -29,16 +27,14 @@
             return {
                 Category: '0',
                 SubCategory: '0',
-                categories:[],
-                subCategories : [],
+                categories: [],
+                subCategories: [],
             }
         },
         methods: {
-            getStates() {
-
-                Vue.axios.get('getSubCategories/'+this.Country)
-                .then((response)=>{
-                    this.states = response.data;  
+            getSubCategories() {
+                Vue.axios.get('getSubCategories/'+this.Category).then((response)=>{
+                    this.subCategories = response.data;  
                 })
             }
         }

@@ -47384,11 +47384,11 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_1_vue_axios___default.a, __WEBPACK_IMPORTED_MO
         };
     },
     methods: {
-        getStates: function getStates() {
+        getSubCategories: function getSubCategories() {
             var _this2 = this;
 
-            Vue.axios.get('getSubCategories/' + this.Country).then(function (response) {
-                _this2.states = response.data;
+            Vue.axios.get('getSubCategories/' + this.Category).then(function (response) {
+                _this2.subCategories = response.data;
             });
         }
     }
@@ -47559,7 +47559,7 @@ exports = module.exports = __webpack_require__(47)(false);
 
 
 // module
-exports.push([module.i, "\nselect{\n\twidth: 100%;\n}\n", ""]);
+exports.push([module.i, "\nselect{ width: 100%;\n}\n", ""]);
 
 // exports
 

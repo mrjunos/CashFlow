@@ -12,6 +12,10 @@ class CategoriesController extends Controller {
 
     	$categories = Category::all();
     	$data = [];
+    	$data[0] = [
+            'id'   => 0,
+            'text' =>'Seleccione',
+        ];
     	foreach ($categories as $key => $value) {
     		$data[$key+1] = ['id' => $value->id, 'text' => $value->name];
     	}
